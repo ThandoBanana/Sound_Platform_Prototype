@@ -1,0 +1,451 @@
+/* ===========================
+   Sign In/Up Page Styles
+   =========================== */
+
+.auth-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+    padding: 100px 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.auth-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 4rem;
+    align-items: start;
+}
+
+.auth-card {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+/* Tabs */
+.auth-tabs {
+    display: flex;
+    background: var(--dark-bg);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    color: var(--text-light);
+    border-bottom-color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.tab-btn:hover {
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Form Container */
+.auth-form-container {
+    padding: 3rem;
+}
+
+.auth-form-container.hidden {
+    display: none;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.auth-header p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+/* Form Styles */
+.auth-form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    background: var(--dark-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: var(--transition);
+}
+
+.password-toggle:hover {
+    color: var(--text-light);
+}
+
+.password-requirements {
+    margin-top: 0.5rem;
+}
+
+.password-requirements small {
+    color: var(--text-gray);
+    font-size: 0.85rem;
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    background: var(--dark-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: 4px;
+    position: relative;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.checkbox-label input:checked + .checkmark {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-label input:checked + .checkmark::after {
+    opacity: 1;
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    color: var(--primary-dark);
+}
+
+/* Auth Button */
+.auth-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.auth-btn.primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.auth-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Divider */
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-dark);
+}
+
+.auth-divider span {
+    background: rgba(30, 41, 59, 0.8);
+    padding: 0 1rem;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* Social Login */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-dark);
+    border-radius: var(--border-radius);
+    background: var(--dark-bg);
+    color: var(--text-light);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    border-color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.google-btn:hover {
+    border-color: #db4437;
+    background: rgba(219, 68, 55, 0.1);
+}
+
+.facebook-btn:hover {
+    border-color: #4267B2;
+    background: rgba(66, 103, 178, 0.1);
+}
+
+.twitter-btn:hover {
+    border-color: #1DA1F2;
+    background: rgba(29, 161, 242, 0.1);
+}
+
+.social-btn i {
+    font-size: 1.25rem;
+}
+
+/* Benefits Sidebar */
+.benefits-sidebar {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--border-radius-xl);
+    padding: 2.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+}
+
+.benefits-sidebar h3 {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.benefit-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.benefit-item i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.benefit-item h4 {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.benefit-item p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .auth-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .benefits-sidebar {
+        order: -1;
+        position: static;
+    }
+    
+    .benefits-sidebar h3 {
+        font-size: 1.25rem;
+    }
+    
+    .benefit-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-section {
+        padding: 80px 0 2rem;
+    }
+    
+    .auth-form-container {
+        padding: 2rem;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .benefits-sidebar {
+        padding: 2rem;
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .benefit-item i {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-form-container {
+        padding: 1.5rem;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .benefits-sidebar {
+        padding: 1.5rem;
+    }
+    
+    .benefits-sidebar h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+}
